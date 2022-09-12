@@ -13,13 +13,13 @@ const images = [
   },
 ];
 // Вариант 1
-// const imageListEl = document.querySelector('.gallery');
-// const items = images.map(image => `<li><img src="${image.url}" alt="${image.alt}"></li>`).join(' ');
-// imageListEl.insertAdjacentHTML("afterbegin", items);
-// console.log(imageListEl);
+const imageListEl = document.querySelector('.gallery');
+const items = images.map(image => `<li><img src="${image.url}" alt="${image.alt}"></li>`).join(' ');
+imageListEl.insertAdjacentHTML("afterbegin", items);
+console.log(imageListEl);
 
 // Вариант2
-const imageListEl = document.querySelector('.gallery');
-const makeItem = image => imageListEl.insertAdjacentHTML("beforeend", `<li><img src="${image.url}" alt="${image.alt}"></li>`);
-images.map(makeItem);
-console.log(imageListEl);
+// const imageListEl = document.querySelector('.gallery');
+// const makeItem = image => imageListEl.insertAdjacentHTML("beforeend", `<li><img src="${image.url}" alt="${image.alt}"></li>`);
+// images.map(makeItem);
+// console.log(imageListEl);

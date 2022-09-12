@@ -10,11 +10,15 @@ buttonDestroyEl.addEventListener('click', destroyBoxes);
 function createBoxes(amount) {
   amount = inputEl.value;
   let boxSize = 20;
+  let element;
+  let elementsArray = [];
   for (let i = 0; i < amount; i += 1){
     boxSize += 10;
-    boxesDivision.insertAdjacentHTML('beforeend', `   <div  style="background-color: ${getRandomHexColor()}; width: ${boxSize}px; height: ${boxSize}px;"></div>`);
+    element = `<div  style="background-color: ${getRandomHexColor()}; width: ${boxSize}px; height: ${boxSize}px;"></div>`;
+    elementsArray.push(element);
   }
-  
+  boxesDivision.insertAdjacentHTML('beforeend', elementsArray.join(' '));
+  buttonCreateEl.removeEventListener('click', createBoxes);
 }
 function destroyBoxes() {
   boxesDivision.innerHTML = '';

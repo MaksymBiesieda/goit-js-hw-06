@@ -6,6 +6,7 @@ function onFormSubmit(event) {
     event.preventDefault(event);
     if (event.currentTarget.elements.email.value === '' || event.currentTarget.elements.password.value === '') {
         alert("Все поля формы должны быть заполнены!");
+        return;
     }
     const formData = {
         email: event.currentTarget.elements.email.value,
